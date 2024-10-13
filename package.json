@@ -1,7 +1,7 @@
 {
-  "name": "portfoliojs",
+  "name": "docsframe-ex",
   "version": "0.1.0",
-  "description": "Components contoured to your personal portfolio",
+  "description": "This is the basic documentation template from which Docsframe is built",
   "private": true,
   "scripts": {
     "dev": "next dev",
