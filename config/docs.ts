@@ -1,27 +1,10 @@
-import { MainNavItem, SidebarNavItem } from "@/types";
+import { SidebarNavItem } from "@/types";
 
 interface DocsConfig {
-  mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
 }
 
 export const docsConfig: DocsConfig = {
-  mainNav: [
-    {
-      title: "Docs",
-      href: "/docs",
-    },
-    {
-      title: "Components",
-      href: "/docs/components",
-    },
-    {
-      title: "Builder",
-      href: "/builder",
-      disabled: true,
-      label: "Coming soon",
-    },
-  ],
   sidebarNav: [
     {
       title: "Getting Started",

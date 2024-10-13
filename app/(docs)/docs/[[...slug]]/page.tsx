@@ -9,7 +9,6 @@ import "@/app/mdx.css";
 
 import { ChevronRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { allDocs } from "content-collections";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
