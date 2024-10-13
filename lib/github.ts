@@ -10,6 +10,12 @@ interface GitHubIssueUrlParams {
   milestone?: string;
 }
 
+interface GitHubFileUrlParams {
+  owner: string;
+  repo: string;
+  slug: string;
+}
+
 /**
  * Generates a GitHub issue URL with the provided parameters.
  * https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-url-query
@@ -42,6 +48,7 @@ export function getGitHubIssueUrl(params: GitHubIssueUrlParams): string {
   return `${baseUrl}?${urlParams.toString()}`;
 }
 
-export function getGithubFileUrl(slug: string) {
-  return `https://github.com/skredev/portfoliojs/blob/main/content${slug === "/docs" ? "/docs/index" : slug}.mdx`;
+export function getGithubFileUrl(params: GitHubFileUrlParams) {
+  const { owner, repo, slug } = params;
+  return `https://github.com/${owner}/${repo}/blob/main/content${slug === "/docs" ? "/docs/index" : slug}.mdx`;
 }

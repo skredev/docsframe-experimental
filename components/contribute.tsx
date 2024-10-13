@@ -11,7 +11,7 @@ export function Contribute({ doc }: { doc: Doc }) {
       icon: BugIcon,
       href: getGitHubIssueUrl({
         owner: "skredev",
-        repo: "portfoliojs",
+        repo: "docsframe-experimental",
         template: "bug_report.yml",
       }),
     },
@@ -20,14 +20,18 @@ export function Contribute({ doc }: { doc: Doc }) {
       icon: LightbulbIcon,
       href: getGitHubIssueUrl({
         owner: "skredev",
-        repo: "portfoliojs",
+        repo: "docsframe-experimental",
         template: "feature_request.yml",
       }),
     },
     {
       text: "Edit this page",
       icon: PencilIcon,
-      href: getGithubFileUrl(doc.slug),
+      href: getGithubFileUrl({
+        owner: "skredev",
+        repo: "docsframe-experimental",
+        slug: doc.slug,
+      }),
     },
   ];
 
