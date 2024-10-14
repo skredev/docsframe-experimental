@@ -10,11 +10,7 @@ import { createHighlighter } from "shiki";
 import { visit } from "unist-util-visit";
 
 const prettyCodeOptions: Options = {
-  theme: JSON.parse(
-    String(
-      readFileSync(path.join(process.cwd(), "/lib/highlighter-theme.json")),
-    ),
-  ),
+  theme: "vitesse-black",
   getHighlighter: (options) =>
     createHighlighter({
       ...options,

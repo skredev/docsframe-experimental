@@ -16,10 +16,10 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio.js — Components contoured",
-    template: "%s — Portfolio.js",
+    default: "Docsframe.ex — Documentation framework",
+    template: "%s — Docsframe.ex",
   },
-  description: "Components contoured for your personal portfolio",
+  description: "Documentation framework",
 };
 
 export default function RootLayout({
