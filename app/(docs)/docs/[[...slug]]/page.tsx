@@ -51,7 +51,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <main
-      className={cn("relative py-6 lg:gap-10 lg:py-8 xl:grid ", {
+      className={cn("relative lg:gap-10 xl:grid ", {
         "xl:grid-cols-[1fr_300px]": doc.toc,
       })}
     >
@@ -104,7 +104,7 @@ export default async function DocPage({ params }: DocPageProps) {
       </div>
       {doc.toc && (
         <div className="hidden text-sm xl:block">
-          <div className="sticky top-16 -mt-10 pt-4">
+          <div className="sticky top-16 -mt-10 pt-8">
             <ScrollArea className="pb-10">
               <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] space-y-4 py-12">
                 <TableOfContents toc={toc} />
