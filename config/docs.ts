@@ -47,6 +47,11 @@ export const docsConfig: DocsConfig = {
           href: `/docs/components/hero`,
           items: [],
         },
+        {
+          title: "Sidebar",
+          href: `/docs/components/sidebar`,
+          items: [],
+        },
       ],
     },
   ],
