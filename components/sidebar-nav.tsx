@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "@/types";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { cn } from "@/lib/utils";
 
@@ -16,26 +16,22 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
 
   return items.length ? (
-    <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
-      <ScrollArea className="h-full pr-6">
-        <div className="w-full pb-20">
-          {items.map((item, index) => (
-            <div key={index} className={"pb-4"}>
-              <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
-                {item.title}
-              </h4>
-              {item?.items && (
-                <DocsSidebarNavItems
-                  items={item.items}
-                  pathname={pathname}
-                  groupId={`group-${index}`}
-                />
-              )}
-            </div>
-          ))}
+    <div className="w-full pb-20">
+      {items.map((item, index) => (
+        <div key={index} className={"pb-4"}>
+          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
+            {item.title}
+          </h4>
+          {item?.items && (
+            <DocsSidebarNavItems
+              items={item.items}
+              pathname={pathname}
+              groupId={`group-${index}`}
+            />
+          )}
         </div>
-      </ScrollArea>
-    </aside>
+      ))}
+    </div>
   ) : null;
 }
 
@@ -62,7 +58,7 @@ export function DocsSidebarNavItems({
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
@@ -87,13 +83,16 @@ export function DocsSidebarNavItems({
                 {item.label}
               </span>
             )}
+            {item.external && (
+              <ExternalLinkIcon className="relative z-10 ml-2 size-4" />
+            )}
           </Link>
         ) : (
           <span
             key={index}
             className={cn(
               "flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground",
-              item.disabled && "cursor-not-allowed opacity-60"
+              item.disabled && "cursor-not-allowed opacity-60",
             )}
           >
             {item.title}
@@ -103,7 +102,7 @@ export function DocsSidebarNavItems({
               </span>
             )}
           </span>
-        )
+        ),
       )}
     </div>
   ) : null;
