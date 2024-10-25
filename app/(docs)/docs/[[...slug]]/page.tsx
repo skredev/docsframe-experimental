@@ -104,9 +104,9 @@ export default async function DocPage({ params }: DocPageProps) {
       </div>
       {doc.toc && (
         <div className="hidden text-sm xl:block">
-          <div className="sticky top-16 -mt-10 pt-8">
+          <div className="sticky -mt-10 pt-9">
             <ScrollArea className="pb-10">
-              <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] space-y-4 py-12">
+              <div className="sticky -mt-10 h-[calc(100vh-3.5rem)] space-y-4 py-12">
                 <TableOfContents toc={toc} />
                 <Contribute doc={doc} />
               </div>
