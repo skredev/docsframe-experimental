@@ -1,5 +1,5 @@
-import { Mdx } from "@/components/mdx-components";
-import { DocPager } from "@/components/pager";
+import { Mdx } from "@/components/docsframe/mdx-components";
+import { DocPager } from "@/components/docsframe/pager";
 import { badgeVariants } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getTableOfContents } from "@/lib/toc";
@@ -12,8 +12,8 @@ import { allDocs } from "content-collections";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { Contribute } from "@/components/contribute";
-import { TableOfContents } from "@/components/toc";
+import { Contribute } from "@/components/docsframe/contribute";
+import { TableOfContents } from "@/components/docsframe/toc";
 
 interface DocPageProps {
   params: {

@@ -2,7 +2,7 @@ import { useMDXComponent } from "@content-collections/mdx/react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Callout } from "@/components/callout";
+import { Callout } from "@/components/docsframe/callout";
 import {
   Accordion,
   AccordionContent,
