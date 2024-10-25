@@ -1,37 +1,17 @@
 import { Doc } from "content-collections";
-import { BugIcon, LightbulbIcon, PencilIcon } from "lucide-react";
+import { PencilIcon } from "lucide-react";
 import Link from "next/link";
+import { promises as fs } from "fs";
 
-import { getGithubFileUrl, getGitHubIssueUrl } from "@/lib/github";
+export async function Contribute({ doc }: { doc: Doc }) {
+  const docsframeJson = await fs.readFile(process.cwd() + "/docsframe.json", "utf8");
+  const docsframeData = JSON.parse(docsframeJson);
 
-export function Contribute({ doc }: { doc: Doc }) {
   const contributeLinks = [
-    {
-      text: "Report an issue",
-      icon: BugIcon,
-      href: getGitHubIssueUrl({
-        owner: "skredev",
-        repo: "docsframe-experimental",
-        template: "bug_report.yml",
-      }),
-    },
-    {
-      text: "Request a feature",
-      icon: LightbulbIcon,
-      href: getGitHubIssueUrl({
-        owner: "skredev",
-        repo: "docsframe-experimental",
-        template: "feature_request.yml",
-      }),
-    },
     {
       text: "Edit this page",
       icon: PencilIcon,
-      href: getGithubFileUrl({
-        owner: "skredev",
-        repo: "docsframe-experimental",
-        slug: doc.slug,
-      }),
+      href: `https://github.com/${docsframeData.contribution.owner}/${docsframeData.contribution.repo}/blob/main/content${doc.slug === "/docs" ? "/docs/index" : doc.slug}.mdx`,
     },
   ];
 
