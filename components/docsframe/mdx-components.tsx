@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import { LinkedCards, LinkedCardItem } from "./linkedcards";
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -35,6 +36,8 @@ const components = {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  LinkedCards,
+  LinkedCardItem,
   Callout,
   Image,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -219,15 +222,6 @@ const components = {
     <code
       className={cn(
         "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className
-      )}
-      {...props}
-    />
-  ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cn(
-        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
         className
       )}
       {...props}
