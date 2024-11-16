@@ -2,17 +2,17 @@ import { NavItem, NavItemWithChildren } from "@/types/index";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { Doc } from "content-collections";
 import Link from "next/link";
-
 import { buttonVariants } from "@/components/ui/button";
-import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
+import { getDocsConfig, DocsConfig } from "@/lib/docsConfig";
 
 interface DocsPagerProps {
   doc: Doc;
 }
 
-export function DocPager({ doc }: DocsPagerProps) {
-  const pager = getPagerForDoc(doc);
+export async function DocPager({ doc }: DocsPagerProps) {
+  const docsConfig = await getDocsConfig();
+  const pager = getPagerForDoc(doc, docsConfig);
 
   if (!pager) {
     return null;
@@ -42,10 +42,10 @@ export function DocPager({ doc }: DocsPagerProps) {
   );
 }
 
-export function getPagerForDoc(doc: Doc) {
-  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];
+function getPagerForDoc(doc: Doc, config: DocsConfig) {
+  const flattenedLinks = [null, ...flatten(config.sidebarNav), null];
   const activeIndex = flattenedLinks.findIndex(
-    (link) => doc.slug === link?.href,
+    (link) => doc.slug === link?.href
   );
   const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
   const next =
@@ -58,7 +58,7 @@ export function getPagerForDoc(doc: Doc) {
   };
 }
 
-export function flatten(links: NavItemWithChildren[]): NavItem[] {
+function flatten(links: NavItemWithChildren[]): NavItem[] {
   return links
     .reduce<NavItem[]>((flat, link) => {
       return flat.concat(link.items?.length ? flatten(link.items) : link);
