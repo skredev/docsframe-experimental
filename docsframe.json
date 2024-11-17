@@ -1,14 +1,18 @@
 {
   "contribution": {
     "owner": "skredev",
-    "repo": "docsframe-minimal"
+    "repo": "docsframe"
   },
   "docsConfig": {
-    "title": "Getting Started",
-    "items": [
+    "categories": [
       {
-        "title": "Introduction",
-        "href": "/docs"
+        "title": "Getting Started",
+        "items": [
+          {
+            "title": "Introduction",
+            "href": "/docs"
+          }
+        ]
       }
     ]
   }

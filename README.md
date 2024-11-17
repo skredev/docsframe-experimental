@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This project is the version of Docsframe that includes all the components, including the experimental ones that are under development.
+> This project is the version of Docsframe that includes all released and experimental components.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 

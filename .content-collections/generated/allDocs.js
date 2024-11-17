@@ -15,7 +15,7 @@ export default [
       "path": "docs\\index"
     },
     "image": "undefined/Introduction",
-    "slug": "/docs\\index",
+    "slug": "/docs/index",
     "slugAsParams": "",
     "body": {
       "raw": "Culpa anim eu excepteur est commodo ut culpa est ea Lorem nisi. Mollit ipsum ullamco fugiat ut cupidatat est fugiat.\n\n**Ad non ad Lorem exercitation reprehenderit magna?**\n\nDo consequat incididunt sunt duis adipisicing cupidatat in laborum aliqua aliquip mollit. Elit eiusmod incididunt incididunt proident consectetur anim fugiat cupidatat labore.\n\n## Laborum\n\nId consectetur laborum magna enim in https://docsframe.work enim https://chosera.com.",
