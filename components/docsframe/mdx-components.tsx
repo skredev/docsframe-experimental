@@ -1,3 +1,4 @@
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 import { Callout } from "./callout";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import Link from "next/link";
@@ -25,6 +26,10 @@ const CustomLink = (props: any) => {
 
 const components = {
   Image,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
