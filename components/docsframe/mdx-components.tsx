@@ -1,3 +1,4 @@
+import { ComponentPreview } from "./component-preview";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 import { Callout } from "./callout";
 import { useMDXComponent } from "@content-collections/mdx/react";
@@ -30,6 +31,7 @@ const components = {
   TabsList,
   TabsTrigger,
   TabsContent,
+  ComponentPreview,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
