@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
+import { CodeCollapsible } from "./code-collapsible";
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -32,6 +33,7 @@ const components = {
   TabsTrigger,
   TabsContent,
   ComponentPreview,
+  CodeCollapsible,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
