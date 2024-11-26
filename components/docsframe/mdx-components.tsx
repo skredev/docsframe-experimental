@@ -1,12 +1,12 @@
-import { ComponentPreview } from "./component-preview";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
-import { Callout } from "./callout";
+import { Callout } from "@/components/docsframe/callout";
+import { CodeCollapsible } from "@/components/docsframe/code-collapsible";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/docsframe/tabs";
+import { ComponentPreview } from "@/components/docsframe/component-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { CodeCollapsible } from "./code-collapsible";
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -28,12 +28,6 @@ const CustomLink = (props: any) => {
 
 const components = {
   Image,
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  ComponentPreview,
-  CodeCollapsible,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -174,6 +168,12 @@ const components = {
     );
   },
   Callout,
+  CodeCollapsible,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  ComponentPreview,
 };
 
 interface MDXProps {
